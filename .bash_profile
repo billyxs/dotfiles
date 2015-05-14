@@ -12,10 +12,14 @@ WORK_PATH=${WORK_PATH#:}
 export PATH="$TEMP_PATH:$WORK_PATH"
 unset -v TEMP_PATH WORK_PATH
 
+# BASH Completion
+# brew install bash-completion
+# https://github.com/Homebrew/homebrew-completions
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
+# Other
 shopt -s checkwinsize
 shopt -s histappend
 
