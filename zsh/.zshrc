@@ -102,8 +102,13 @@ alias ,sv="source ~/.vim/vimrc"
 alias ,ez="vim ~/.zshrc"
 alias ,sz="source ~/.zshrc"
 
-# Stuff
+# Weather
 alias weather="curl wttr.in"
+alias weather.agoura="curl wttr.in/Agoura_Hills"
+alias weather.florida="curl wttr.in/West_Palm_Beach"
+alias weather.modesto="curl wttr.in/Modesto"
+alias weather.chicago="curl wttr.in/Chicago"
+alias moon="curl wttr.in/Moon"
 
 # Projects
 alias dot="cd ~/Projects/git/dot-files"
