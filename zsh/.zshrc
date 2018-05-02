@@ -111,27 +111,28 @@ alias weather.chicago="curl wttr.in/Chicago"
 alias moon="curl wttr.in/Moon"
 
 # Projects
+alias .vim="cd ~/.vim"
 alias dot="cd ~/Projects/git/dot-files"
+alias notes="cd ~/Projects/git/notes"
 
+alias admin="cd ~/Projects/hixme/admin-web-client"
+alias appui="cd ~/Projects/hixme/app-ui"
 alias enroll="cd ~/Projects/hixme/enrollme-web-client"
 alias enrollme="cd ~/Projects/hixme/enrollme-web-client"
-alias admin="cd ~/Projects/hixme/admin-web-client"
 alias hui="cd ~/Projects/hixme/hixme-ui"
-alias appui="cd ~/Projects/hixme/app-ui"
-alias .vim="cd ~/.vim"
 
-alias notes="cd ~/Projects/git/notes"
+alias ods="cd ~/Projects/hixme/operational-data-store-service"
 alias reports="cd ~/Projects/hixme/report-service"
 
 # GIT and development
-alias gs="git status"
-alias gp="git pull --rebase"
+alias ga="git add --all -p"
 alias gc="git commit -m"
 alias gcd="git checkout develop"
 alias gcm="git checkout master"
-alias ga="git add --all -p"
-alias rein="rm -rf node_modules && npm install"
+alias gp="git pull --rebase"
+alias gs="git status"
 alias refresh="rm -rf node_modules && npm install"
+alias rein="rm -rf node_modules && npm install"
 
 # Vimstart - inspired by Calvin Cieslak
 function vimstart() {
