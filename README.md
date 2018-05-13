@@ -14,4 +14,5 @@ stow zsh
 ## Articles for this journey
 
 - http://stratus3d.com/blog/2015/02/28/sync-iterm2-profile-with-dotfiles-repository/
+- http://osxdaily.com/2010/06/22/remove-the-last-login-message-from-the-terminal/
 
