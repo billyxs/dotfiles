@@ -4,6 +4,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/osxs/.oh-my-zsh
 
+# zsh tmux settings
+ZSH_TMUX_AUTOSTART='true'
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -12,10 +15,11 @@ export ZSH=/Users/osxs/.oh-my-zsh
 #ZSH_THEME="pygmalion"
 #ZSH_THEME="agnoster"
 #ZSH_THEME="af-magic"
-ZSH_THEME="steeef"
+#ZSH_THEME="steeef"
 #ZSH_THEME="gianu"
 #ZSH_THEME="muse"
-ZSH_THEME="dieter"
+#ZSH_THEME="dieter"
+ZSH_THEME="dracula"
 #ZSH_THEME="dogenpunk"
 #ZSH_THEME="TheOne"
 
@@ -94,13 +98,17 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Commands
 # use exa for ls
 alias ls=exa
+alias cc=clear
 
+# Edit files
 alias ,ev="vim ~/.vim/vimrc"
 alias ,sv="source ~/.vim/vimrc"
 alias ,ez="vim ~/.zshrc"
 alias ,sz="source ~/.zshrc"
+alias ,et="vim ~/.tmux.conf"
 
 # Weather
 alias weather="curl wttr.in"
@@ -114,15 +122,9 @@ alias moon="curl wttr.in/Moon"
 alias .vim="cd ~/.vim"
 alias dot="cd ~/Projects/git/dot-files"
 alias notes="cd ~/Projects/git/notes"
+alias wnotes="cd ~/Projects/hixme/work-notes"
 
-alias admin="cd ~/Projects/hixme/admin-web-client"
-alias appui="cd ~/Projects/hixme/app-ui"
-alias enroll="cd ~/Projects/hixme/enrollme-web-client"
-alias enrollme="cd ~/Projects/hixme/enrollme-web-client"
-alias hui="cd ~/Projects/hixme/hixme-ui"
-
-alias ods="cd ~/Projects/hixme/operational-data-store-service"
-alias reports="cd ~/Projects/hixme/report-service"
+alias bible="tmux a -t bible"
 
 # GIT and development
 alias ga="git add --all -p"
@@ -133,6 +135,86 @@ alias gp="git pull --rebase"
 alias gs="git status"
 alias refresh="rm -rf node_modules && npm install"
 alias rein="rm -rf node_modules && npm install"
+
+function note() {
+  local notes_dir="~/Projects/git/notes"
+  case "$1" in
+    o)
+      vim "$notes_dir"
+      ;;
+    l)
+      l "$notes_dir"
+      ;;
+    s)
+      pushd "$notes_dir"
+      msg="Saved at $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
+      git add .
+      git commit -m "$msg"
+      git push origin master
+      popd
+      ;; 
+    *)
+      vim "$notes_dir/$1"
+  esac
+}
+
+function wnote() {
+  local notes_dir="~/Projects/hixme/work-notes"
+  case "$1" in
+    o)
+      vim "$notes_dir"
+      ;;
+    l)
+      l "$notes_dir"
+      ;;
+    s)
+      pushd "$notes_dir"
+      msg="Saved at $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
+      git add .
+      git commit -m "$msg"
+      git push origin master
+      popd
+      ;; 
+    *)
+      vim "$notes_dir/$1"
+  esac
+}
+
+# search google 
+function google() {
+  open /Applications/Google\ Chrome.app "https://google.com/search?q=$1"
+}
+
+# search stackoverflow
+function so() {
+  open /Applications/Google\ Chrome.app "https://stackoverflow.com/search?q=$1"
+}
+
+#alias tmux="TERM=xterm-256color-bce tmux"
+
+# Vim ZSH Bindings
+# bindkey -v
+# 
+# # Use jk to exit insert mode
+# #bindkey -e jk \\e
+# 
+# bindkey '^P' up-history
+# bindkey '^N' down-history
+# bindkey '^?' backward-delete-char
+# bindkey '^h' backward-delete-char
+# bindkey '^w' backward-kill-word
+# bindkey '^r' history-incremental-search-backward
+# 
+# function zle-line-init zle-keymap-select {
+#   VIM_PROMPT="%{$fg_bold[cyan]%} [% normal]%  %{$reset_color%}"
+#   RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+#   zle reset-prompt
+# }
+# 
+# zle -N zle-line-init
+# zle -N zle-keymap-select
+# export KEYTIMEOUT=1
+
 
 # Vimstart - inspired by Calvin Cieslak
 function vimstart() {
@@ -186,11 +268,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/osxs/Projects/hixme/report-service/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/osxs/Projects/hixme/report-service/node_modules/tabtab/.completions/serverless.zsh
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/osxs/Projects/hixme/report-service/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/osxs/Projects/hixme/report-service/node_modules/tabtab/.completions/sls.zsh
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
-#export NVM_DIR="$HOME/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/osxs/Projects/hixme/api-services/health-plan-service/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/osxs/Projects/hixme/api-services/health-plan-service/node_modules/tabtab/.completions/slss.zsh
