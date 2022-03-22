@@ -4,14 +4,6 @@
 <dict>
 	<key>AllowClipboardAccess</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>BadgeFont</key>
 	<string>Helvetica</string>
 	<key>Custom Color Presets</key>
@@ -13837,6 +13829,8 @@
 			<string></string>
 		</dict>
 	</dict>
+	<key>HapticFeedbackForEsc</key>
+	<false/>
 	<key>HideActivityIndicator</key>
 	<false/>
 	<key>HideMenuBarInFullscreen</key>
@@ -13855,64 +13849,6 @@
 	<integer>4</integer>
 	<key>JobName</key>
 	<true/>
-	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
-	<key>NSNavLastRootDirectory</key>
-	<string>~/Projects/git/iterm</string>
-	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{941, 746}</string>
-	<key>NSQuotedKeystrokeBinding</key>
-	<string></string>
-	<key>NSRepeatCountBinding</key>
-	<string></string>
-	<key>NSScrollAnimationEnabled</key>
-	<false/>
-	<key>NSScrollViewShouldScrollUnderTitlebar</key>
-	<false/>
-	<key>NSTableView Columns v2 KeyBingingTable</key>
-	<data>
-	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoK4HCA8aGxwdHh8gJjAxMlUkbnVsbNIJCgsOWk5TLm9iamVjdHNWJGNsYXNzogwN
-	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
-	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
-	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
-	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
-	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
-	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
-	AAAAADoAAAAAAAAAAAAAAAAAAAFM
-	</data>
-	<key>NSTableView Sort Ordering v2 KeyBingingTable</key>
-	<data>
-	YnBsaXN0MDDUAQIDBAUGFBVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA1VJG51bGzSCQoLDFpOUy5vYmplY3RzViRjbGFzc6CAAtIODxARWiRjbGFz
-	c25hbWVYJGNsYXNzZXNeTlNNdXRhYmxlQXJyYXmjEBITV05TQXJyYXlYTlNPYmplY3Rf
-	EA9OU0tleWVkQXJjaGl2ZXLRFhdVQXJyYXmAAQgRGiMtMjc7QUZRWFlbYGt0g4ePmKqt
-	swAAAAAAAAEBAAAAAAAAABgAAAAAAAAAAAAAAAAAAAC1
-	</data>
-	<key>NSTableView Supports v2 KeyBingingTable</key>
-	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>2033 528 1102 287 1920 0 1920 1177 </string>
-	<key>NSWindow Frame ProfilesPanel</key>
-	<string>345 435 735 382 0 0 1440 877 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 365 620 392 0 0 1440 878 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>271 254 606 469 0 0 1440 878 </string>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>241 701 918 452 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 29 1918 1148 0 0 1920 1177 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2022 607 810 527 1920 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -14066,20 +14002,19 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Answerback String</key>
+			<string>tmux attach -t home || tmux new -s home
+</string>
 			<key>BM Growl</key>
 			<false/>
 			<key>Background Color</key>
 			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
+				<real>0.15977837145328522</real>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.12215272337198257</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.11765811592340469</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -14182,11 +14117,15 @@
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
-			<real>0.90696183170180733</real>
+			<real>0.91000000000000003</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>tmux attach -t home || tmux new -s home</string>
+			<string> tmux attach -t home || tmux new -s home
+ tmux attach -t home || tmux new -s home
+tmux attach -t home || tmux new -s home</string>
+			<key>Initial Use Transparency</key>
+			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -14660,6 +14599,8 @@
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
+			<key>Session Close Undo Timeout</key>
+			<integer>15</integer>
 			<key>Shortcut</key>
 			<string></string>
 			<key>Silence Bell</key>
@@ -14677,7 +14618,7 @@
 			<key>Thin Strokes</key>
 			<integer>2</integer>
 			<key>Transparency</key>
-			<real>0.048487071700507617</real>
+			<real>0.0</real>
 			<key>Unicode Version</key>
 			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
@@ -14693,7 +14634,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>0.9597056193524095</real>
+			<real>0.95999999999999996</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -14702,104 +14643,14 @@
 			<string>/Users/osxs</string>
 		</dict>
 	</array>
-	<key>NoSyncHaveUsedCopyMode</key>
-	<true/>
-	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
-	<true/>
-	<key>NoSyncInstallationId</key>
-	<string>78AAEA39-4AA0-46A9-98E7-23B1BEF26B41</string>
-	<key>NoSyncLastTipTime</key>
-	<real>534878603.38008302</real>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
-	<true/>
-	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
-	<integer>0</integer>
-	<key>NoSyncPermissionToShowTip</key>
-	<true/>
-	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>526712890.17766601</real>
-	<key>NoSyncTipsToNotShow</key>
-	<array>
-		<string>000</string>
-		<string>0000</string>
-		<string>0001</string>
-		<string>0002</string>
-		<string>0003</string>
-		<string>0004</string>
-		<string>0005</string>
-		<string>0006</string>
-		<string>0007</string>
-		<string>0008</string>
-		<string>0009</string>
-		<string>0010</string>
-		<string>0011</string>
-		<string>0012</string>
-		<string>0013</string>
-		<string>0014</string>
-		<string>0015</string>
-		<string>0016</string>
-		<string>0017</string>
-		<string>0018</string>
-		<string>0019</string>
-		<string>0020</string>
-		<string>0021</string>
-		<string>0022</string>
-		<string>0023</string>
-		<string>0024</string>
-		<string>0025</string>
-		<string>0026</string>
-		<string>0027</string>
-		<string>0028</string>
-		<string>0029</string>
-		<string>0030</string>
-		<string>0031</string>
-		<string>0032</string>
-		<string>0033</string>
-		<string>0034</string>
-		<string>0035</string>
-		<string>0036</string>
-		<string>0037</string>
-		<string>0038</string>
-		<string>0039</string>
-		<string>0040</string>
-		<string>0041</string>
-		<string>0042</string>
-		<string>0043</string>
-		<string>0044</string>
-		<string>0045</string>
-		<string>0046</string>
-		<string>0047</string>
-		<string>0048</string>
-		<string>0049</string>
-		<string>0050</string>
-		<string>0051</string>
-		<string>0052</string>
-		<string>0053</string>
-		<string>0054</string>
-		<string>0055</string>
-		<string>0056</string>
-		<string>0057</string>
-		<string>0058</string>
-		<string>0059</string>
-		<string>0060</string>
-		<string>0061</string>
-		<string>0062</string>
-		<string>0063</string>
-		<string>0064</string>
-		<string>0065</string>
-		<string>0066</string>
-		<string>0067</string>
-		<string>0068</string>
-		<string>0069</string>
-		<string>0070</string>
-		<string>0071</string>
-	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -14833,29 +14684,19 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PrefsCustomFolder</key>
-	<string>/Users/osxs/Projects/git/dot-files</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
-	<key>SUEnableAutomaticChecks</key>
-	<true/>
-	<key>SUFeedAlternateAppNameKey</key>
-	<string>iTerm</string>
-	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=53</string>
-	<key>SUHasLaunchedBefore</key>
-	<true/>
-	<key>SULastCheckTime</key>
-	<date>2018-05-28T14:02:36Z</date>
-	<key>SUSendProfileInfo</key>
-	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
+	<false/>
+	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.47838040865384635</real>
@@ -14863,11 +14704,19 @@
 	<false/>
 	<key>TabStyle</key>
 	<integer>3</integer>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>3</integer>
 	<key>TabViewType</key>
 	<integer>1</integer>
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Profiles</string>
+	</array>
 	<key>UseBorder</key>
+	<false/>
+	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
 	<false/>
@@ -14875,8 +14724,6 @@
 	<string>/-+\~_.</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
-	<key>iTerm Version</key>
-	<string>3.1.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
