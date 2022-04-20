@@ -39,3 +39,21 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Applications/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Applications/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Applications/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Applications/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

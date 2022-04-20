@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/osxs/.oh-my-zsh
+export ZSH="/Users/billym/.oh-my-zsh"
 
 # zsh tmux settings
 ZSH_TMUX_AUTOSTART='true'
@@ -100,8 +100,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Commands
 # use exa for ls
-alias ls=exa
-alias cc=clear
+# alias ls=exa
 
 # Edit files
 alias ,ev="vim ~/.vim/vimrc"
@@ -109,9 +108,11 @@ alias ,sv="source ~/.vim/vimrc"
 alias ,ez="vim ~/.zshrc"
 alias ,sz="source ~/.zshrc"
 alias ,et="vim ~/.tmux.conf"
+alias ,st="source ~/.tmux.conf && tmux source-file ~/.tmux.conf"
 
 # Weather
 alias weather="curl wttr.in"
+alias weather.home="curl wttr.in/Murrieta"
 alias weather.agoura="curl wttr.in/Agoura_Hills"
 alias weather.florida="curl wttr.in/West_Palm_Beach"
 alias weather.modesto="curl wttr.in/Modesto"
@@ -119,12 +120,17 @@ alias weather.chicago="curl wttr.in/Chicago"
 alias moon="curl wttr.in/Moon"
 
 # Projects
+alias bazerh="cd ~/Projects/bazerh"
 alias .vim="cd ~/.vim"
-alias dot="cd ~/Projects/git/dot-files"
+alias dot="cd ~/dot-files"
 alias notes="cd ~/Projects/git/notes"
-alias wnotes="cd ~/Projects/hixme/work-notes"
+alias wnotes="cd ~/Projects/git/wnotes"
+alias money="cd ~/Projects/bazerh/money"
+alias commands="vim ~/Projects/git/wnotes/commands.md"
+alias dlog="vim ~/Projects/git/wnotes/daily-log/README.md"
 
-alias bible="tmux a -t bible"
+# AWS
+alias awsb="aws --profile bazerh"
 
 # GIT and development
 alias ga="git add --all -p"
@@ -152,14 +158,14 @@ function note() {
       git commit -m "$msg"
       git push origin master
       popd
-      ;; 
+      ;;
     *)
       vim "$notes_dir/$1"
   esac
 }
 
 function wnote() {
-  local notes_dir="~/Projects/hixme/work-notes"
+  local notes_dir="~/Projects/git/wnotes"
   case "$1" in
     o)
       vim "$notes_dir"
@@ -174,15 +180,25 @@ function wnote() {
       git commit -m "$msg"
       git push origin master
       popd
-      ;; 
+      ;;
     *)
       vim "$notes_dir/$1"
   esac
 }
 
-# search google 
+# search google
 function google() {
   open /Applications/Google\ Chrome.app "https://google.com/search?q=$1"
+}
+
+# search nowait admin prod
+function nw() {
+  open /Applications/Google\ Chrome.app "https://nowaitapp.com/Admin_Site/selectAccount.php?biz_id=$1"
+}
+
+# search nowait admin stage
+function nwstage() {
+  open /Applications/Google\ Chrome.app "https://stretchwait.com/Admin_Site/selectAccount.php?biz_id=$1"
 }
 
 # search stackoverflow
@@ -190,27 +206,34 @@ function so() {
   open /Applications/Google\ Chrome.app "https://stackoverflow.com/search?q=$1"
 }
 
+# y search
+function y() {
+  open /Applications/Google\ Chrome.app "https://y/$1"
+}
+
 #alias tmux="TERM=xterm-256color-bce tmux"
 
 # Vim ZSH Bindings
 # bindkey -v
-# 
+#
 # # Use jk to exit insert mode
 # #bindkey -e jk \\e
-# 
+#
 # bindkey '^P' up-history
 # bindkey '^N' down-history
 # bindkey '^?' backward-delete-char
 # bindkey '^h' backward-delete-char
 # bindkey '^w' backward-kill-word
 # bindkey '^r' history-incremental-search-backward
-# 
+bindkey \^U backward-kill-line
+
+#
 # function zle-line-init zle-keymap-select {
 #   VIM_PROMPT="%{$fg_bold[cyan]%} [% normal]%  %{$reset_color%}"
 #   RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
 #   zle reset-prompt
 # }
-# 
+#
 # zle -N zle-line-init
 # zle -N zle-keymap-select
 # export KEYTIMEOUT=1
@@ -265,14 +288,17 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 #export FZF_DEFAULT_COMMAND='rg --files '
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/osxs/Projects/hixme/api-services/health-plan-service/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/osxs/Projects/hixme/api-services/health-plan-service/node_modules/tabtab/.completions/slss.zsh
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Applications/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Applications/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Applications/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Applications/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
