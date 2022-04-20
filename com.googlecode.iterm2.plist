@@ -14003,8 +14003,7 @@
 				<real>1</real>
 			</dict>
 			<key>Answerback String</key>
-			<string>tmux attach -t home || tmux new -s home
-</string>
+			<string></string>
 			<key>BM Growl</key>
 			<false/>
 			<key>Background Color</key>
@@ -14121,8 +14120,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string> tmux attach -t home || tmux new -s home
- tmux attach -t home || tmux new -s home
+			<string>
 tmux attach -t home || tmux new -s home</string>
 			<key>Initial Use Transparency</key>
 			<true/>
@@ -14647,6 +14645,8 @@ tmux attach -t home || tmux new -s home</string>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
+	<key>OpenTmuxWindowsIn</key>
+	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
@@ -14710,6 +14710,8 @@ tmux attach -t home || tmux new -s home</string>
 	<integer>1</integer>
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
+	<key>TmuxUsesDedicatedProfile</key>
+	<true/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Profiles</string>
