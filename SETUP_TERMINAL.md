@@ -1,5 +1,11 @@
 # SETUP Terminal and environment
 
+## Install iTerm and ZSH
+- [iTerm](https://iterm2.com/)
+- [Oh My ZSH](https://ohmyz.sh/#install)
+  - Copy over themes from dotfiles
+
+
 ## Brew installs
 [Install homebrew](https://brew.sh/)
 
@@ -10,7 +16,8 @@ brew install python
 
 [Install font](https://github.com/sb2nov/mac-setup/issues/218#issuecomment-768923328)
 ```
-brew tap homebrew/cask-fonts && brew install --cask font-source-code-pro
+brew tap homebrew/cask-fonts
+brew install font-office-code-pro
 ```
 
 ## Setup dotfiles
@@ -18,6 +25,9 @@ brew tap homebrew/cask-fonts && brew install --cask font-source-code-pro
 Install dotfiles
 ```
 git clone git@github.com/billyxs/dotfiles
+
+# Copy zsh themes
+cp dotfiles/.oh-my-zsh/themes/* ~/.oh-my-zsh/themes/
 ```
 
 ## Configure iTerm
